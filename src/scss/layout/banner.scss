@@ -1,0 +1,36 @@
+.banner {
+  background: url('../images/banner/poster.png'), var(--second-color);
+  @include base-bg-style;
+
+  .banner-holder {
+    @include d-flex-column;
+    justify-content: center;
+    padding-top: 90px;
+    height: 100vh;
+    min-height: 520px;
+    text-align: center;
+
+    .h1 {
+      margin-bottom: 5px;
+    }
+
+    .h2 {
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .sub-title {
+      max-width: 520px;
+      margin: 0 auto 50px auto;
+      font-size: 1.5rem;
+    }
+  }
+
+  .btn-wrapper {
+    @include d-flex-justify-center;
+    a {
+      margin: 0 15px;
+      font-size: 1.8rem;
+    }
+  }
+}
