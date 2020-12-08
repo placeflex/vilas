@@ -40,11 +40,13 @@ h6, .h6 {
 }
 
 p {
+  font-family: var(--headings-font-family);
   margin: 0 0 1em;
 }
 
 a {
   color: var(--base-link-color);
+  text-decoration: none;
   &:focus {
     text-decoration: none;
   }

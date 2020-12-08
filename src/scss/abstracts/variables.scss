@@ -49,32 +49,37 @@ $media-expressions: (
   --widescreen: #{map-get($breakpoints, 'widescreen')};
 
   // Colors
+  --color-main: #3e3e3e;
+  --second-color: #d3d3d3;
+  --text-btn: #dadada;
   --color-white: #fff;
   --color-black: #000;
   --color-grey: #999;
   --color-blue: #39f;
 
   // Fonts
-  --font-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  --font-serif: 'Times New Roman', Times, Baskerville, Georgia, serif;
+  --font-sans-serif: Poppins, 'Times New Roman', Times, Baskerville, Georgia,
+    serif;
+  --font-serif: Arvo, 'Helvetica Neue', Helvetica, sans-serif;
+  --second-font-sans-serif: Roboto, sans-serif;
 
   // Body base
-  --base-background-color: var(--color-black);
+  --base-background-color: var(--color-white);
   --base-font-family: var(--font-sans-serif);
   --base-font-size: 1.6rem;
   --base-line-height: 1.2;
-  --base-text-color: var(--color-black);
+  --base-text-color: var(--color-text);
   --base-min-width: 320px;
 
   // Links base
   --base-link-color: var(--color-blue);
 
   // Buttons base
-  --btn-color: var(--color-white);
-  --btn-background: var(--color-blue);
+  --btn-color: var(--text-btn);
+  --btn-background: var(--color-main);
   --btn-padding: 0.4em 0.7em;
   --btn-font-size: 1.6rem;
-  --btn-font-family: var(--font-sans-serif);
+  --btn-font-family: var(--font-serif);
 
   // Forms base
   --form-font-family: var(--font-sans-serif);
@@ -84,7 +89,7 @@ $media-expressions: (
   --placeholder-color: var(--color-grey);
 
   // Headings base
-  --headings-font-family: var(--font-sans-serif);
+  --headings-font-family: var(--font-serif);
   --headings-color: var(--base-text-color);
 
   // Base font styles for headings

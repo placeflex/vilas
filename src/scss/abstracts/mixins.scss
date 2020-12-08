@@ -2,7 +2,6 @@
 //
 // Note: If you use a framework (bootstrap, zurb etc.) that includes mixins you can import them too or remove this file.
 
-
 /// Mixin helping with long string of the url
 /// @link https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
 /// @example @include word-wrap;
@@ -54,12 +53,18 @@
 /// or @include v-align-pair(image, text, bottom);
 /// or @include v-align-pair(image, text, middle, 200px);
 
-@mixin v-align-pair($child-name1, $child-name2, $valign: middle, $width1: auto, $width2: auto ) {
+@mixin v-align-pair(
+  $child-name1,
+  $child-name2,
+  $valign: middle,
+  $width1: auto,
+  $width2: auto
+) {
   display: table;
-  .#{$child-name1}{
+  .#{$child-name1} {
     display: table-cell;
     vertical-align: $valign;
-    width: $width1; 
+    width: $width1;
   }
   .#{$child-name2} {
     display: table-cell;
@@ -67,7 +72,6 @@
     width: $width2;
   }
 }
-
 
 /// Vertical align el
 /// @example @include vertical-align-el;
@@ -94,17 +98,15 @@
 /// Font-smothing
 /// @example @include font-smoothing(on);
 /// @include font-smoothing(off);
-@mixin font-smoothing($value: on){
-  @if $value == on{
+@mixin font-smoothing($value: on) {
+  @if $value == on {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  @else{
+  } @else {
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
   }
 }
-
 
 /// Hides the text in an element, commonly used to show an image. Some elements will need block-level styles applied.
 /// @link http://zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
@@ -116,12 +118,11 @@
   white-space: nowrap;
 }
 
-
 /// Creates a visual triangle
 /// values—foreground-color background-color.
 /// @link http://bourbon.io/docs/#triangle
 /// @param $size - argument can take one or two values—width height
-/// @param $color - argument can take one or two 
+/// @param $color - argument can take one or two
 /// @param $direction - value: up, down, left, right, up-right, up-left, down-right, down-left
 /// @example @include triangle(12px, gray, down);
 /// @include triangle(12px 6px, gray blue, up-left);
@@ -134,7 +135,11 @@
   height: 0;
   width: 0;
 
-  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+  @if ($direction == up) or
+    ($direction == down) or
+    ($direction == right) or
+    ($direction == left)
+  {
     $width: $width / 2;
     $height: if(length($size) > 1, $height, $height/2);
 
@@ -180,16 +185,44 @@
     border-style: solid;
     border-width: $height $width;
   } @else if ($direction == inset-right) {
-    border-color: $background-color $background-color $background-color $foreground-color;
+    border-color: $background-color
+      $background-color
+      $background-color
+      $foreground-color;
     border-style: solid;
     border-width: $width $height;
   } @else if ($direction == inset-left) {
-    border-color: $background-color $foreground-color $background-color $background-color;
+    border-color: $background-color
+      $foreground-color
+      $background-color
+      $background-color;
     border-style: solid;
     border-width: $width $height;
   }
 }
 
+/// Creates a visual arrow
+/// @include arrow(3px, gray, up);
+
+@mixin arrow($borderWidth, $color, $direction) {
+  border: solid $color;
+  border-width: 0 $borderWidth $borderWidth 0;
+  display: inline-block;
+
+  @if $direction == up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  } @else if $direction == right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  } @else if $direction == down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  } @else if $direction == left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+}
 
 /// Animate css properties
 /// @example @include animate(color);
@@ -199,16 +232,21 @@
 
 $animation-speed: 0.3s !default;
 
-@mixin animate($properties, $duration: $animation-speed, $easing: ease-in-out, $delay: false) {
+@mixin animate(
+  $properties,
+  $duration: $animation-speed,
+  $easing: ease-in-out,
+  $delay: false
+) {
   @if ($properties and $duration and $easing and $delay) {
-    $list:();
+    $list: ();
     @each $prop in $properties {
       $str: #{$prop} #{$duration} #{$easing} #{$delay};
       $list: append($list, $str, comma);
     }
     transition: $list;
   } @else {
-    $list:();
+    $list: ();
     @each $prop in $properties {
       $str: #{$prop} #{$duration} #{$easing};
       $list: append($list, $str, comma);
@@ -217,14 +255,173 @@ $animation-speed: 0.3s !default;
   }
 }
 
-
 /// Mixin for styling form-placeholders
 /// @example @include placeholder { color: red; }
 
 @mixin placeholder {
-  &::-webkit-input-placeholder {@content;}
-  &::-moz-placeholder {opacity: 1; @content;}
-  &:-moz-placeholder {@content;}
-  &:-ms-input-placeholder {@content;}
-  &.placeholder {@content;}
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &.placeholder {
+    @content;
+  }
+}
+
+// bg styles
+@mixin base-bg-style {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// flex
+@mixin d-flex {
+  display: flex;
+}
+
+@mixin d-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin d-flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@mixin d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin d-flex-column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+// d-flex + align-items
+@mixin d-flex-align-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+@mixin d-flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin d-flex-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+// d-flex + justify-content
+@mixin d-flex-justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin d-flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin d-flex-justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin d-flex-justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+@mixin d-flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+// d-flex + align-items + justify-content
+@mixin d-flex-center-start {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin d-flex-center-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin d-flex-center-end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin d-flex-center-around {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin d-flex-center-between {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin d-flex-start-start {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+// d-flex + flex-direction + align-items
+@mixin d-flex-column-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin d-flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin d-flex-column-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+// d-flex + flex-direction + align-items + justify
+@mixin d-flex-column-start-between {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }

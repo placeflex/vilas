@@ -48,5 +48,20 @@ input[type='submit'] {
   appearance: none;
   border-radius: 0;
   cursor: pointer;
-  font-family: var(--form-font-family);
+  font-family: var(--btn-font-family);
+  background: transparent;
+  font-weight: 400;
+  outline: 0;
+  border: 0;
+  padding: 0;
+}
+
+input[type='submit'],
+input[type='button'] {
+  @extend .btn;
+  line-height: initial;
+}
+
+input[type='submit'] {
+  min-width: auto !important;
 }
