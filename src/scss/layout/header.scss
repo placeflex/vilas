@@ -1,0 +1,51 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  &__holder {
+    @include d-flex-align-center;
+    justify-content: space-between;
+    padding: 25px 0;
+  }
+
+  .burger {
+    z-index: 11;
+  }
+
+  .header-nav {
+    background: var(--second-color);
+    padding: 150px 0 60px;
+    max-width: 400px;
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    transition: 0.5s;
+    z-index: 10;
+
+    &.active {
+      right: 0;
+    }
+
+    &__list {
+      @include d-flex-align-center;
+      @extend %listreset;
+      flex-direction: column;
+      text-align: center;
+      height: 100%;
+      overflow-y: auto;
+    }
+    &__item {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__link {
+    }
+  }
+}
