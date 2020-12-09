@@ -1,0 +1,32 @@
+.project {
+  .h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  &__holder {
+    padding: 105px 0 100px;
+  }
+
+  .btn-wrapper {
+    margin-top: 95px;
+  }
+}
+
+.project-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 315px;
+  grid-gap: 30px;
+  @include media('<=tablet') {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  @include media('<=phone') {
+    grid-template-columns: 1fr;
+  }
+}
+
+

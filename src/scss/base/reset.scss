@@ -10,6 +10,10 @@
 
 html {
   font-size: 62.5%;
+
+  @include media('<=desktop') {
+    font-size: 50.5%;
+  }
 }
 
 body {
@@ -30,4 +34,3 @@ img {
 .gm-style img {
   max-width: none;
 }
-

@@ -8,3 +8,8 @@
   display: inline-block;
   font-size: 0;
 }
+
+.btn-wrapper {
+  @include d-flex;
+  justify-content: center;
+}

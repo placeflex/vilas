@@ -1,0 +1,94 @@
+.project-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  @include media('<=phone') {
+    height: 300px;
+  }
+
+  &:first-child {
+    grid-row-end: 1;
+    grid-row-start: 3;
+    @include media('<=tablet') {
+      grid-row-end: auto;
+      grid-row-start: auto;
+    }
+  }
+
+  &_big {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    @include media('<=tablet') {
+      grid-column-start: auto;
+      grid-row-end: auto;
+      grid-row-start: auto;
+    }
+  }
+
+  @include media('hover') {
+    &:hover {
+      .project-item__overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__picture {
+    height: 100%;
+    img {
+      @include size(100%, 100%);
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay {
+    @include d-flex-justify-center;
+    background: rgba(#3e3e3e, 0.5);
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    @include media('<=tablet') {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__link {
+    transform: translateY(-100%);
+
+    a {
+      margin: 0 15px;
+    }
+  }
+
+  &__footer {
+    background: var(--second-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 32px 25px;
+
+    .h3 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+  }
+
+  &__theme {
+    font-family: var(--second-font-sans-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+}
