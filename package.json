@@ -66,6 +66,8 @@
   },
   "dependencies": {
     "jquery": "3.5.1",
-    "normalize.css": "8.0.1"
+    "normalize.css": "8.0.1",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^6.4.1"
   }
 }

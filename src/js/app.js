@@ -3,10 +3,10 @@
 // This file will be compiled into app.js
 // Feel free with using ES6 here.
 import $ from 'jquery';
-
 import dots from './modules/dots';
+import aboutSliderWrapper from './modules/about';
 
-// When DOM is ready
 $(() => {
   dots();
+  aboutSliderWrapper();
 });

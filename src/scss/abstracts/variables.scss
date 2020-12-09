@@ -51,6 +51,7 @@ $media-expressions: (
   // Colors
   --color-main: #3e3e3e;
   --second-color: #d3d3d3;
+  --primary-color: #e9e9e9;
   --text-btn: #dadada;
   --color-white: #fff;
   --color-black: #000;
@@ -68,7 +69,7 @@ $media-expressions: (
   --base-font-family: var(--font-sans-serif);
   --base-font-size: 1.6rem;
   --base-line-height: 1.2;
-  --base-text-color: var(--color-text);
+  --base-text-color: var(--color-main);
   --base-min-width: 320px;
 
   // Links base
