@@ -1,10 +1,23 @@
 import $ from 'jquery';
 import getData from './getData';
 
+let loadMoreWrapper = $('.js-wrapper-more');
 let loadMoreBtn = $('.js-load-more');
 let projectWrapper = $('.project-wrapper');
+let loaderImgSrc = './images/icon/loader.svg';
+let loaderImg = $(`<img src=${loaderImgSrc} />`);
 let indexShowStart = 0;
 let indexShowEnd = 0;
+
+let showLoader = () => {
+  loadMoreBtn.hide();
+  loadMoreWrapper.append(loaderImg);
+};
+
+let removeLoader = () => {
+  loaderImg.remove();
+  loadMoreBtn.show();
+};
 
 const getProject = () => {
   loadMoreBtn.on('click', function () {
@@ -22,16 +35,24 @@ const getProject = () => {
       })
       .then((projectList) => {
         showProjectCards(projectList);
+      })
+      .catch((err) => {
+        throw new Error(`status ${err.status} statusText: ${err.statusText}`);
       });
   };
 
   let showProjectCards = (projectList) => {
+    showLoader();
     if (projectList.length === 0) {
       loadMoreBtn.hide();
+      loaderImg.remove();
     }
     $(projectList).each(function () {
       let options = $(this)[0];
-      renderProjectCard(options);
+      setTimeout(() => {
+        renderProjectCard(options);
+        removeLoader();
+      }, 2000);
     });
   };
 

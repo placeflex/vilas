@@ -10,11 +10,6 @@
 
   &_big {
     grid-row-start: span 2;
-    @include media('<=tablet') {
-      // grid-column-start: auto;
-      // grid-row-end: auto;
-      // grid-row-start: auto;
-    }
   }
 
   @include media('hover') {
@@ -46,6 +41,7 @@
     right: 0;
     opacity: 0;
     visibility: hidden;
+    transition: .3s;
 
     @include media('<=tablet') {
       opacity: 1;

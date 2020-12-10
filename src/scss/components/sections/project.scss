@@ -11,13 +11,17 @@
 
   .btn-wrapper {
     margin-top: 95px;
+
+    img,
+    svg {
+      max-width: 45px;
+    }
   }
 }
 
 .project-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  // grid-template-rows: repeat(3, 1fr);
   align-items: flex-start;
   grid-gap: 30px;
 
@@ -29,5 +33,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-
