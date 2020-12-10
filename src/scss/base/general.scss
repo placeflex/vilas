@@ -1,12 +1,35 @@
 .container {
-  max-width: 1110px;
+  max-width: 1170px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 30px;
+
+  @include media('<=phone') {
+    padding: 0 15px;
+  }
 }
 
 .logo {
+  font-family: var(--font-serif);
+  position: relative;
   display: inline-block;
-  font-size: 0;
+  font-weight: bold;
+  font-size: 4rem;
+  z-index: 11;
+
+  &__dec {
+    position: relative;
+    &::after {
+      content: '';
+      background: var(--color-main);
+      width: 14px;
+      height: 4px;
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 .btn-wrapper {

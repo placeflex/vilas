@@ -17,9 +17,10 @@
 .project-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-auto-rows: 315px;
+  // grid-template-rows: repeat(3, 1fr);
+  align-items: flex-start;
   grid-gap: 30px;
+
   @include media('<=tablet') {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;

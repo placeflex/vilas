@@ -1,0 +1,76 @@
+{
+  "project": [
+    {
+      "img": "images/project-images/project_1.jpg",
+      "altimg": "Food picture",
+      "title": "Food Menu Flyer Template",
+      "theme": "Graphic Design",
+      "bigCard": true
+    },
+    {
+      "img": "images/project-images/project_2.jpg",
+      "altimg": "Food picture 2",
+      "title": "Food Menu Flyer Template 2",
+      "theme": "Graphic Design 2",
+      "linkView": "https://www.codewars.com/"
+    },
+    {
+      "img": "images/project-images/project_3.jpg",
+      "altimg": "Food picture 3",
+      "title": "Food Menu Flyer Template 3",
+      "theme": "Graphic Design 3",
+      "linkView": "https://www.codewars.com/"
+    },
+    {
+      "img": "images/project-images/project_4.jpg",
+      "altimg": "Food picture 4",
+      "title": "Food Menu Flyer Template 4",
+      "theme": "Graphic Design 4",
+      "linkView": "https://www.codewars.com/"
+    },
+    {
+      "img": "images/project-images/project_7.jpg",
+      "altimg": "Food picture 7",
+      "title": "Food Menu Flyer Template 7",
+      "theme": "Graphic Design 7",
+      "linkView": "https://www.codewars.com/",
+      "bigCard": true
+    },
+    {
+      "img": "images/project-images/project_5.jpg",
+      "altimg": "Food picture 5",
+      "title": "Food Menu Flyer Template 5",
+      "theme": "Graphic Design 5",
+      "linkView": "https://www.codewars.com/"
+    },
+    {
+      "img": "images/project-images/project_6.jpg",
+      "altimg": "Food picture 6",
+      "title": "Food Menu Flyer Template 6",
+      "theme": "Graphic Design 6",
+      "linkView": "https://www.codewars.com/"
+    },
+    {
+      "img": "images/project-images/project_1.jpg",
+      "altimg": "Food picture 8",
+      "title": "Food Menu Flyer Template 8",
+      "theme": "Graphic Design 8",
+      "linkView": "https://www.codewars.com/"
+    },
+    {
+      "img": "images/project-images/project_3.jpg",
+      "altimg": "Food picture 9",
+      "title": "Food Menu Flyer Template 9",
+      "theme": "Graphic Design 9",
+      "linkView": "https://www.codewars.com/"
+    },
+    {
+      "img": "images/project-images/project_7.jpg",
+      "altimg": "Food picture 7",
+      "title": "Food Menu Flyer Template 7",
+      "theme": "Graphic Design 7",
+      "linkView": "https://www.codewars.com/",
+      "bigCard": true
+    }
+  ]
+}

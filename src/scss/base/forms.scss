@@ -19,7 +19,6 @@ textarea {
   box-sizing: border-box;
   font-family: var(--form-font-family);
   border-radius: 0;
-  // border: 0.1rem solid var(--form-element-border-color);
   padding: var(--form-element-padding);
 
   &:focus {
@@ -64,4 +63,9 @@ input[type='button'] {
 
 input[type='submit'] {
   min-width: auto !important;
+}
+
+button[type='submit']:disabled {
+  pointer-events: none;
+  opacity: 0.7;
 }

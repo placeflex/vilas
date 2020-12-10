@@ -4,7 +4,7 @@
 
 .about-wrapper {
   @include d-flex-align-center;
-  padding: 115px 0 100px;
+  padding: 95px 0 76px;
 
   @include media('<=tablet') {
     flex-direction: column;
@@ -43,24 +43,3 @@
   }
 }
 
-.about-slider {
-  overflow: hidden;
-  position: relative;
-  max-width: 480px;
-  width: 100%;
-  margin-left: 60px;
-  padding: 20px 0;
-
-  @include media('<=tablet') {
-    max-width: none;
-    margin: 0;
-  }
-
-  .arrows-wrapper {
-    @include d-flex-column;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    z-index: 3;
-  }
-}
