@@ -65,9 +65,11 @@ const getProject = () => {
     bigCard = false,
   }) => {
     let projectItemWrapper = $('<article class="project-item"></article>');
+    
     if (bigCard) {
       projectItemWrapper.addClass('project-item_big');
     }
+
     let projectInnerHtml = `
             <div class="project-item__picture">
               <img src="${img}" alt="${altimg}" />
