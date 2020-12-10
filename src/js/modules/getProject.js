@@ -13,7 +13,7 @@ const getProject = () => {
   });
 
   const getProjectList = (countShowElem) => {
-    getData('../db.json')
+    getData('db.json')
       .then((data) => {
         indexShowEnd += countShowElem;
         let projectList = data.project.slice(indexShowStart, indexShowEnd);
