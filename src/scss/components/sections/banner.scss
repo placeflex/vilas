@@ -1,5 +1,6 @@
 .banner {
-  background: url('../images/banner/poster.png'), var(--second-color);
+  background-image: url('../images/banner/poster.png');
+  background-color: var(--second-color);
   @include base-bg-style;
 
   .banner-holder {
